@@ -7,9 +7,9 @@ Gem::Specification.new do |s|
   s.version     = Omniauth::Odnoklassniki::VERSION
   s.authors     = ["Alexander Logvinov"]
   s.email       = ["avl@logvinov.com"]
-  s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.homepage    = "https://github.com/incubus/omniauth-odnoklassniki"
+  s.summary     = %q{OmniAuth strategy for Odnoklassniki.ru}
+  s.description = %q{OmniAuth strategy for Odnoklassniki.ru}
 
   s.rubyforge_project = "omniauth-odnoklassniki"
 
@@ -18,7 +18,6 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  # specify any dependencies here; for example:
-  # s.add_development_dependency "rspec"
-  # s.add_runtime_dependency "rest-client"
+  s.add_runtime_dependency "omniauth", "~> 1.0"
+  s.add_runtime_dependency "omniauth-oauth2", "~> 1.0"
 end
