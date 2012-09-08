@@ -17,6 +17,8 @@ module OmniAuth
         :param_name => 'access_token'
       }
 
+      option :provider_ignores_state, true
+
       uid do
         raw_info['uid']
       end
