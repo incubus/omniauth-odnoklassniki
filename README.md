@@ -10,6 +10,20 @@ on the [Odnoklassniki Developers Page](http://dev.odnoklassniki.ru/wiki/pages/vi
       provider :odnoklassniki, ENV['APP_ID'], ENV['APP_SECRET_KEY'], :public_key => ENV['APP_PUBLIC_KEY']
     end
 
+## Configuring
+You can configure several options, which you pass in to the `provider` method via a `Hash`:
+
+* `scope`: A list of permissions you want to request from the user. [Read the Odnoklassniki docs for more details](http://dev.odnoklassniki.ru/wiki/pages/viewpage.action?pageId=12878032)
+
+For example, to get `VALUABLE_ACCESS` permissions:
+
+```ruby
+use OmniAuth::Builder do
+  provider :odnoklassniki, ENV['APP_ID'], ENV['APP_SECRET_KEY'], :public_key => ENV['APP_PUBLIC_KEY'], 
+    :scope => 'VALUABLE_ACCESS'
+end
+```
+
 ## License
 
 Copyright (c) 2011 Alexander Logvinov.
