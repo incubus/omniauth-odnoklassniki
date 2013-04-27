@@ -8,7 +8,7 @@ module OmniAuth
 
       option :client_options, {
         :site => 'http://www.odnoklassniki.ru/',
-        :token_url => 'http://api.odnoklassniki.ru/oauth/token.do',
+        :token_url => 'https://api.odnoklassniki.ru/oauth/token.do',
         :authorize_url => '/oauth/authorize'
       }
 
@@ -70,7 +70,6 @@ module OmniAuth
             'method' => 'users.getCurrentUser',
             'application_key' => options.public_key
           }
-          params['scope'] = URI::encode(options.scope) if options.scope
           params['sig'] = calculate_signature(params)
           access_token.get('http://api.odnoklassniki.ru/fb.do', :params => params).parsed
         end
