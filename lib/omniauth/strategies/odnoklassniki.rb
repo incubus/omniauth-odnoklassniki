@@ -67,7 +67,9 @@ module OmniAuth
             'application_key' => options.public_key
           }
           params['sig'] = calculate_signature(params)
-          access_token.get('http://api.odnoklassniki.ru/fb.do', :params => params).parsed
+          result = access_token.get('http://api.odnoklassniki.ru/fb.do', :params => params).parsed
+          raise CallbackError.new(nil, :invalid_response) if result['error_code'] || result['error_msg']
+          result
         end
       end
 
