@@ -48,13 +48,9 @@ module OmniAuth
       end
 
       def build_access_token
-        super.tap do |token|
-          token.options.merge!(access_token_options)
-        end
-      end
-
-      def access_token_options
-        options.access_token_options.inject({}) { |h,(k,v)| h[k.to_sym] = v; h }
+        verifier = request.params['code']
+        client.auth_code.get_token(verifier, {:redirect_uri => callback_url}.merge(token_params.to_hash(:symbolize_keys => true)),
+          {'expires' => 1800}.merge(options.access_token_options.to_hash(:symbolize_keys => true)))
       end
 
       private
