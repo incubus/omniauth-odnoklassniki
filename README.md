@@ -1,8 +1,8 @@
 # OmniAuth Odnoklassniki.ru
 
 This is the unofficial OmniAuth strategy for authenticating to Odnoklassniki.ru via OAuth.
-To use it, you'll need to sign up for an [OAuth2](http://dev.odnoklassniki.ru/wiki/pages/viewpage.action?pageId=12878032) Application ID and Keys
-on the [Odnoklassniki Developers Page](http://dev.odnoklassniki.ru/wiki/pages/viewpage.action?pageId=13992188).
+To use it, you'll need to sign up for an [OAuth2](http://www.odnoklassniki.ru/devaccess) Application ID and Keys
+on the [Odnoklassniki Developers Page](http://apiok.ru/wiki/pages/viewpage.action?pageId=42476652).
 
 ## Basic Usage
 
