@@ -15,7 +15,7 @@ end
 ## Configuring
 You can configure several options, which you pass in to the `provider` method via a `Hash`:
 
-* `scope`: A list of permissions you want to request from the user. [Read the Odnoklassniki docs for more details](http://dev.odnoklassniki.ru/wiki/pages/viewpage.action?pageId=12878032)
+* `scope`: A list of permissions you want to request from the user. [Read the Odnoklassniki docs for more details](http://apiok.ru/wiki/pages/viewpage.action?pageId=42476652)
 
 For example, to get `VALUABLE_ACCESS` permissions:
 
