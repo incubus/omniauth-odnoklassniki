@@ -26,6 +26,41 @@ use OmniAuth::Builder do
 end
 ```
 
+## Authentication Hash
+Here's an example *Auth Hash* available in `request.env['omniauth.auth']`:
+
+```ruby
+{"provider"=>"odnoklassniki",
+ "uid"=>"156210383106",
+ "info"=>
+  {"name"=>"Тимур Козьменко",
+   "first_name"=>"Тимур",
+   "last_name"=>"Козьменко",
+   "image"=>"http://i500.mycdn.me/getImage?photoId=182400752898&photoType=4&viewToken=NdMoSjCY43Do55GMC9dcSw",
+   "urls"=>{"Odnoklassniki"=>"http://www.odnoklassniki.ru/profile/156210383106"}},
+ "credentials"=>
+  {"token"=>"7.ipa228300y1o3o2ms683k5tsrvk16364", "refresh_token"=>"093ef4a51932db6e22834fb83eab95fdb83_156210383106_141603572", "expires_at"=>1416037593, "expires"=>true},
+ "extra"=>
+  {"raw_info"=>
+    {"uid"=>"156210383106",
+     "birthday"=>"1989-01-18",
+     "age"=>25,
+     "first_name"=>"Тимур",
+     "last_name"=>"Козьменко",
+     "name"=>"Тимур Козьменко",
+     "locale"=>"ru",
+     "gender"=>"male",
+     "has_email"=>true,
+     "location"=>{"city"=>"Владивосток", "country"=>"RUSSIAN_FEDERATION", "countryCode"=>"RU", "countryName"=>"Россия"},
+     "current_status"=>"test test",
+     "current_status_id"=>"527194803202",
+     "current_status_date"=>"1970-01-01 03:00:00",
+     "online"=>"web",
+     "photo_id"=>"182400752898",
+     "pic_1"=>"http://i500.mycdn.me/getImage?photoId=182400752898&photoType=4&viewToken=NdMoSjCY43Do55GMC9dcSw",
+     "pic_2"=>"http://usd1.mycdn.me/getImage?photoId=182400752898&photoType=2&viewToken=NdMoSjCY43Do55GMC9dcSw"}}}
+```
+
 ## License
 
 Copyright (c) 2011 Alexander Logvinov.
