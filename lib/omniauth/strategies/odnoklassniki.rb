@@ -66,8 +66,8 @@ module OmniAuth
             'method' => 'users.getCurrentUser',
             'application_key' => options.public_key
           }
-          params['sig'] = calculate_signature(params)
           params['fields'] = options[:info_fields] if options.key?(:info_fields)
+          params['sig'] = calculate_signature(params)
           Rails.logger.info("ODNOKLASSNIKI REQUEST: #{params.inspect}")
           result = access_token.get('http://api.odnoklassniki.ru/fb.do', :params => params).parsed
           if result['error_code'] || result['error_msg']
