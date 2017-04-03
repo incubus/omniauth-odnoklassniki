@@ -7,8 +7,8 @@ module OmniAuth
       option :name, 'odnoklassniki'
 
       option :client_options, {
-        :site => 'http://www.odnoklassniki.ru/',
-        :token_url => 'https://api.odnoklassniki.ru/oauth/token.do',
+        :site => 'https://connect.ok.ru',
+        :token_url => 'https://api.ok.ru/oauth/token.do',
         :authorize_url => '/oauth/authorize'
       }
 
@@ -30,7 +30,7 @@ module OmniAuth
           :last_name => raw_info['last_name'],
           :image => raw_info['pic_1'],
           :urls => {
-            'Odnoklassniki' => "http://www.odnoklassniki.ru/profile/#{uid}",
+            'Odnoklassniki' => "https://ok.ru/profile/#{uid}",
           }
         }
       end
@@ -64,7 +64,7 @@ module OmniAuth
           }
           params['fields'] = options[:info_fields] if options.key?(:info_fields)
           params['sig'] = calculate_signature(params)
-          result = access_token.get('http://api.odnoklassniki.ru/fb.do', :params => params).parsed
+          result = access_token.get('http://api.ok.ru/fb.do', :params => params).parsed
           raise CallbackError.new(nil, :invalid_response) if result['error_code'] || result['error_msg']
           result
         end
