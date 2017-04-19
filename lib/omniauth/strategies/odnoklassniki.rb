@@ -64,7 +64,7 @@ module OmniAuth
           }
           params['fields'] = options[:info_fields] if options.key?(:info_fields)
           params['sig'] = calculate_signature(params)
-          result = access_token.get('http://api.ok.ru/fb.do', :params => params).parsed
+          result = access_token.get('https://api.ok.ru/fb.do', :params => params).parsed
           raise CallbackError.new(nil, :invalid_response) if result['error_code'] || result['error_msg']
           result
         end
