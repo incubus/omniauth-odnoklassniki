@@ -32,7 +32,9 @@ module OmniAuth
           :urls => {
             'Odnoklassniki' => "https://ok.ru/profile/#{uid}",
           }
-        }
+        }.tap do |info|
+          info[:email] = raw_info['email'] if raw_info['email']
+        end
       end
 
       extra do
